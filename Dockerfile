@@ -9,6 +9,7 @@ RUN adduser docker sudo
 RUN echo '%sudo ALL=(ALL) NOPASSWD:ALL' >> /etc/sudoers
 USER docker
 RUN sudo apt-get install build-essential manpages-dev
+COPY install.sh /app/llama
 COPY llama /app/llama
 WORKDIR /app/llama
 RUN sudo chown -R docker:docker /app/llama
@@ -26,5 +27,3 @@ RUN python3 convert-pth-to-ggml.py models/7B/ 1
 RUN ./quantize ./models/7B/ggml-model-f16.bin ./models/7B/ggml-model-q4_0.bin 2
 RUN ./main -m ./models/7B/ggml-model-q4_0.bin -n 128
 CMD /bin/bash
-
-
