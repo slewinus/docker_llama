@@ -10,7 +10,7 @@ RUN echo '%sudo ALL=(ALL) NOPASSWD:ALL' >> /etc/sudoers
 USER docker
 RUN sudo apt-get install build-essential manpages-dev
 COPY llama /app/llama
-COPY install.sh /app/llama
+COPY instruc.sh /app/llama
 WORKDIR /app/llama
 RUN sudo chown -R docker:docker /app/llama
 ENV CFLAGS="-Wall -Werror"
