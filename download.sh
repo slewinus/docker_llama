@@ -10,11 +10,11 @@ read choix
 
 case $choix in
     1)
-        RUN mkdir -p llama/models/7B/
-        RUN wget -P llama/models/7B/ https://huggingface.co/nyanko7/LLaMA-7B/resolve/main/consolidated.00.pth
-        RUN wget -P llama/models/7B/ https://huggingface.co/nyanko7/LLaMA-7B/raw/main/params.json
-        RUN wget -P llama/models/7B/ https://huggingface.co/nyanko7/LLaMA-7B/raw/main/checklist.chk
-        RUN wget -P llama/models/ https://huggingface.co/nyanko7/LLaMA-7B/resolve/main/tokenizer.model
+        mkdir -p llama/models/7B/
+        wget -P llama/models/7B/ https://huggingface.co/nyanko7/LLaMA-7B/resolve/main/consolidated.00.pth
+        wget -P llama/models/7B/ https://huggingface.co/nyanko7/LLaMA-7B/raw/main/params.json
+        wget -P llama/models/7B/ https://huggingface.co/nyanko7/LLaMA-7B/raw/main/checklist.chk
+        wget -P llama/models/ https://huggingface.co/nyanko7/LLaMA-7B/resolve/main/tokenizer.model
         ;;
     2)
         wget https://example.com/modele13.tar.gz
