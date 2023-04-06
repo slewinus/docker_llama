@@ -1,14 +1,10 @@
 FROM arm64v8/ubuntu:latest
 RUN apt update && apt upgrade
-RUN apt install -y python3 python3-pip
-RUN apt install -y sudo
-RUN apt install -y git
-RUN apt install -y wget
+RUN apt install -y python3 python3-pip sudo git wget build-essential manpages-dev
 RUN adduser --disabled-password --gecos '' docker
 RUN adduser docker sudo
 RUN echo '%sudo ALL=(ALL) NOPASSWD:ALL' >> /etc/sudoers
 USER docker
-RUN sudo apt-get install build-essential manpages-dev
 COPY llama /app/llama
 COPY instruc.sh /app/llama
 WORKDIR /app/llama
