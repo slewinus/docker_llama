@@ -16,4 +16,5 @@ RUN python3 convert-pth-to-ggml.py models/7B/ 1
 RUN ./quantize ./models/30B/ggml-model-f16.bin ./models/7B/ggml-model-q4_0.bin 2
 RUN ./main -m ./models/30B/ggml-model-q4_0.bin -n 128
 #change model in 2 line up
+#add variable to choose which model you want
 CMD /bin/bash

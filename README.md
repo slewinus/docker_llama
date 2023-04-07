@@ -25,7 +25,6 @@ You're good to go
 ### Notes
 
 you will need at least 230 Go on you're disk for all the models <br>
-for the moment just 7B model link is working<br>
-All bash script are in French
+for the moment just 7B & 30B model link is working<br>
 
 
