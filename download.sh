@@ -1,26 +1,38 @@
 #!/bin/bash
 
-echo "Quel modèle souhaitez-vous installer ?"
-echo "1) Modèle 7 (13Go)"
-echo "2) Modèle 13"
-echo "3) Modèle 30"
-echo "4) Modèle 65"
+echo"downloading tokenizer.model in llama/models"
+
+wget -P llama/models/ http://nextcloud.ockap.xyz/s/7DefcwkZi9xDSMy/download/tokenizer.model
+
+echo "Which models would you like to download ? (230 Go in total)"
+echo "1) 7B (13Go)"
+echo "2) 13B currently not working"
+echo "3) 30B (60Go)"
+echo "4) 65B currently not working"
 
 read choix
 
 case $choix in
-    1)
+    1) #Download file Ok
         mkdir -p llama/models/7B/
         wget -P llama/models/7B/ http://nextcloud.ockap.xyz/s/cb3LtLFLz8Qt4gD/download/consolidated.00.pth
         wget -P llama/models/7B/ http://nextcloud.ockap.xyz/s/as9rXZPBFY2fXe9/download/checklist.chk
         wget -P llama/models/7B/ http://nextcloud.ockap.xyz/s/rDS3nFXS9DCdDYL/download/params.json
-        wget -P llama/models/ http://nextcloud.ockap.xyz/s/7DefcwkZi9xDSMy/download/tokenizer.model
         ;;
     2)
-        wget https://example.com/modele13.tar.gz
+        mkdir -p llama/models/13B/
+        wget -P llama/models/13B/ 
+        wget -P llama/models/13B/ 
+        wget -P llama/models/13B/ 
         ;;
     3)
-        wget https://example.com/modele30.tar.gz
+        mkdir -p llama/models/30B/
+        wget -P llama/models/30B/ http://nextcloud.ockap.xyz/s/NioJ9xifmeTGkmn/download/consolidated.00.pth
+        wget -P llama/models/30B/ http://nextcloud.ockap.xyz/s/oPZRPzzC4kDEwmZ/download/consolidated.01.pth 
+        wget -P llama/models/30B/ http://nextcloud.ockap.xyz/s/enT962iaA9dpjAY/download/consolidated.02.pth 
+        wget -P llama/models/30B/ http://nextcloud.ockap.xyz/s/eConZ7S2xqsmzWr/download/consolidated.03.pth 
+        wget -P llama/models/30B/ http://nextcloud.ockap.xyz/s/LA8iLQTBJnLPayG/download/checklist.chk 
+        wget -P llama/models/30B/ http://nextcloud.ockap.xyz/s/6pGDMfcbNxam6ga/download/params.json
         ;;
     4)
         wget https://example.com/modele65.tar.gz
