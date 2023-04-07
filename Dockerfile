@@ -13,6 +13,7 @@ ENV CFLAGS="-Wall -Werror"
 RUN make
 RUN python3 -m pip install torch numpy sentencepiece
 RUN python3 convert-pth-to-ggml.py models/7B/ 1
-RUN ./quantize ./models/7B/ggml-model-f16.bin ./models/7B/ggml-model-q4_0.bin 2
-RUN ./main -m ./models/7B/ggml-model-q4_0.bin -n 128
+RUN ./quantize ./models/30B/ggml-model-f16.bin ./models/7B/ggml-model-q4_0.bin 2
+RUN ./main -m ./models/30B/ggml-model-q4_0.bin -n 128
+#change model in 2 line up
 CMD /bin/bash

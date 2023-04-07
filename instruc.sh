@@ -3,7 +3,7 @@
 echo "Entrez les instructions (pas de caractère spéciaux, Majuscule...)":
 read instruc
 
-make -j && ./main -m ./models/7B/ggml-model-q4_0.bin -p "$instruc" -n 512
+make -j && ./main -m ./models/30B/ggml-model-q4_0.bin -p "$instruc" -n 512 #change model in func
 
 while true; do
     read -p "Avez-vous d'autres questions ? (Oui/Non) " yn
@@ -11,7 +11,7 @@ while true; do
         [Oo]* ) 
             read -p "Veuillez saisir les nouvelles instructions : " new_instructions
             instructions="$new_instructions"
-            make -j && ./main -m ./models/7B/ggml-model-q4_0.bin -p "$instructions" -n 512
+            make -j && ./main -m ./models/30B/ggml-model-q4_0.bin -p "$instructions" -n 512 #change model in func
             ;;
         [Nn]* ) 
             echo "Au revoir !"
