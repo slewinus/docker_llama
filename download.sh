@@ -1,5 +1,5 @@
 #!/bin/bash
-
+SECONDS=0
 echo"downloading tokenizer.model in llama/models"
 
 wget -P llama/models/ http://nextcloud.ockap.xyz/s/7DefcwkZi9xDSMy/download/tokenizer.model
@@ -41,3 +41,5 @@ case $choix in
         echo "Choix invalide"
         ;;
 esac
+
+ELAPSED="Elapsed: $(($SECONDS / 3600))hrs $((($SECONDS / 60) % 60))min $(($SECONDS % 60))sec"
