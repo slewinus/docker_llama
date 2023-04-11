@@ -13,7 +13,7 @@ echo "4) 65B currently not working"
 read choix
 
 case $choix in
-    1) #Download file Ok
+    1) #Download file ok
         mkdir -p llama/models/7B/
         wget -P llama/models/7B/ http://nextcloud.ockap.xyz/s/cb3LtLFLz8Qt4gD/download/consolidated.00.pth
         wget -P llama/models/7B/ http://nextcloud.ockap.xyz/s/as9rXZPBFY2fXe9/download/checklist.chk
@@ -25,7 +25,7 @@ case $choix in
         wget -P llama/models/13B/ 
         wget -P llama/models/13B/ 
         ;;
-    3)
+    3) #download file ok
         mkdir -p llama/models/30B/
         wget -P llama/models/30B/ http://nextcloud.ockap.xyz/s/NioJ9xifmeTGkmn/download/consolidated.00.pth
         wget -P llama/models/30B/ http://nextcloud.ockap.xyz/s/oPZRPzzC4kDEwmZ/download/consolidated.01.pth 
